@@ -1,18 +1,14 @@
-# 💸 MERN Wallet-Based Payments App
+# 💸 MERN Based Payments App
 
 A full-stack **wallet-based payments application** built using the **MERN stack** (MongoDB, Express, React, Node.js).
 
 Each user is assigned a **random wallet balance (₹1 – ₹10,000)** upon signup and can securely **send money to other registered users** within the platform.
-
-> ⚠️ This project does **not** use any external payment gateways like Razorpay or Stripe.  
-> All transactions are handled internally to simulate a real-world wallet system.
 
 ---
 
 ## 🚀 Features
 
 - User Signup & Signin (JWT Authentication)
-- Random wallet balance allocation on registration
 - View current wallet balance
 - Search registered users
 - Send money between users
@@ -67,6 +63,6 @@ Each user is assigned a **random wallet balance (₹1 – ₹10,000)** upon sign
 Create a `.env` file inside the **backend** directory and add the following:
 
 ```env
-PORT=5000
+PORT=3000
 MONGO_URI=your_mongodb_connection_string
 JWT_SECRET=your_jwt_secret
