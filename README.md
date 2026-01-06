@@ -51,10 +51,10 @@ Each user is assigned a **random wallet balance (₹1 – ₹10,000)** upon sign
 
 ## 📸 Screenshots
 
-![Signin](screenshots/signin.png)
-![Signup](screenshots/signup.png)
-![Dashboard](screenshots/dashboard.png)
-![Send Money](screenshots/send-money.png)
+![Signup](https://github.com/AkshatVora05/payments-app/blob/main/screenshots/signup.png)
+![Signin](https://github.com/AkshatVora05/payments-app/blob/main/screenshots/signin.png)
+![Dashboard](https://github.com/AkshatVora05/payments-app/blob/main/screenshots/dashboard.png)
+![Send Money](https://github.com/AkshatVora05/payments-app/blob/main/screenshots/transfer.png)
 
 ---
 
