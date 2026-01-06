@@ -52,7 +52,7 @@ const registerUserController = async (req, res) => {
 
         await Account.create({
             userId: newUser._id,
-            balance: 1 + (Math.random() * 10000)
+            balance: Number((Math.random() * 9999 + 1).toFixed(2))
         })
 
         res.status(201).json({

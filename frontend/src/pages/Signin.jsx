@@ -41,7 +41,7 @@ export function Signin(){
                         navigate('/dashboard');
                     }
                     catch(err){
-                        toast.error(err.response.data.message || "Signin failed");
+                        toast.error(err?.response?.data?.message || "Signin failed");
                     }
                 }}
                 ></Button>

@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import toast from "react-hot-toast";
 import { useNavigate, useSearchParams } from "react-router-dom"
 
@@ -10,6 +10,25 @@ export function SendMoney(){
     const [amount, setAmount] = useState(0);
     const navigate = useNavigate();
 
+    useEffect(() => {
+        
+        async function getProfile(){
+            try{
+                await axios.get('http://localhost:3000/api/v1/user/profile', {
+                    headers: {
+                        Authorization: "Bearer " + localStorage.getItem('token')
+                    }
+                })
+            }
+            catch(err){
+                toast.error(err?.response?.data?.message || "Unauthorized access");
+                navigate('/signin');
+            }
+        }
+
+        getProfile();
+    }, [navigate])
+
     return <div className="flex justify-center bg-gray-100 h-screen">
         <div className="h-full flex flex-col justify-center">
             <div className="bg-white shadow-lg h-min max-w-md p-4 space-y-6 w-96 rounded-lg">
@@ -19,7 +38,7 @@ export function SendMoney(){
                 <div className="pt-6">
                     <div className="flex items-center space-x-4">
                         <div className="w-12 h-12 rounded-full bg-green-500 flex items-center justify-center">
-                            <span className="text-2xl text-white">{name[0].toUpperCase()}</span>
+                            <span className="text-2xl text-white">{name?.[0]?.toUpperCase()}</span>
                         </div>
                         <div className="text-2xl font-semibold">
                             {name}
@@ -30,7 +49,7 @@ export function SendMoney(){
                     <div>
                         <label
                             className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-                            for="amount">
+                            htmlFor="amount">
                             Amount (in Rs)
                         </label>
                         <input
